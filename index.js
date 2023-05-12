@@ -18,6 +18,16 @@ app.get('/', (req, res) => {
     res.render('dashboard')
     
 })
+app.get('/usuarios', (req, res)=>{
+    res.render ('usuarios')//render muestra un formato legible al cliente
+})
+app.get('/roles', (req, res)=>{
+    res.render('roles')
+})
+
+app.get('/vigilantes', (req, res)=>{
+    res.render('vigilantes')
+})
 app.get('/cuenta', (req, res) => {
     res.render('cuenta_cobro')
 })
