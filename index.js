@@ -35,6 +35,22 @@ app.get('/propietarios', (req, res) => {
     res.render('propietarios')
 })
 
+app.get('/residentes', (req, res) => {
+    res.render('residentes')
+})
+
+app.get('/visitantes', (req, res) => {
+    res.render('visitantes')
+})
+
+app.get('/espacios', (req, res) => {
+    res.render('espacios')
+})
+
+app.get('/visitas', (req, res) => {
+    res.render('visitas')
+})
+
 
 app.listen(puerto, () => {
     console.log(`Escuchando por el puerto ${puerto}`)

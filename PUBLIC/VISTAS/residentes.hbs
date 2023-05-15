@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>Propietarios</title>
+  <title>Residentes</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="css/simplebar.css">
   <!-- Fonts CSS -->
@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
   <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
 </head>
+
+
+
 
 <body class="vertical  light  ">
   <div class="wrapper">
@@ -113,7 +116,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link pl-3" href="propietarios"><span class="ml-1 item-text">G. propietarios</span></a>
+                <a class="nav-link pl-3" href="|"><span class="ml-1 item-text">G. propietarios</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link pl-3" href="residentes"><span class="ml-1 item-text">G. residentes</span></a>
@@ -131,7 +134,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link pl-3" href="propietarios"><span class="ml-1 item-text">G. visitantes</span></a>
+                <a class="nav-link pl-3" href="visitantes"><span class="ml-1 item-text">G. visitantes</span></a>
               </li>
             </ul>
           </li>
@@ -140,11 +143,14 @@
 
 
 
+
+
+
     <main role="main" class="main-content">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-11">
-            <h2 class="page-title">Crear propietarios</h2>
+            <h2 class="page-title">Crear Residentes</h2>
             <div class="card shadow mb-4">
               {{!-- <div class="card-header">
                 <strong class="card-title">Registrar un nuevo propietario</strong>
@@ -167,12 +173,12 @@
                     </div>
 
                     <div class="form-group mb-3">
-                      <label for="example-password">Nombre propietario</label>
+                      <label for="example-password">Nombre Residentes</label>
                       <input type="text" id="nombre" class="form-control" onchange="ER_validacion_nombre()" required>
                       <div id="FB_nombre"></div>
                     </div>
                     <div class="form-group mb-3">
-                      <label for="example-password">Apellido propietario</label>
+                      <label for="example-password">Apellido Residentes</label>
                       <input type="text" id="apellido" class="form-control" onchange="ER_validacion_apellido()"
                         required>
                       <div id="FB_apellido"></div>
@@ -183,11 +189,6 @@
                       <div id="FB_edad"></div>
                     </div>
 
-
-                  </div> <!-- /.col -->
-
-
-                  <div class="col-md-6">
                     <div class="form-group mb-3">
                       <label>Correo</label>
                       <input type="email" id="correo" class="form-control" onchange="ER_validacion_correo()" required>
@@ -198,18 +199,52 @@
                       <input type="text" id="telefono" class="form-control" onchange="ER_validacion_telefono()">
                       <div id="FB_telefono"></div>
                     </div>
+                    
 
 
+                  </div> <!-- /.col -->
+
+
+                  <div class="col-md-6">
 
 
                     <div class="form-group mb-3">
-                      <label for="simpleinput">Propiedad</label>
+                      <label for="simpleinput">Tipo residente</label>
+                      <select name="" id="simpleinput" class="form-control">
+                        <option value="ARRENDATARIO">ARRENDATARIO</option>
+                        <option value="PROPIETARIO">PROPIETARIO</option>
+                        <option value="COMPAÑERO">COMPAÑERO</option>
+                        <option value="FAMILIAR">FAMILIAR</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label>Habita</label>
+                      <select name="" id="simpleinput" class="form-control">
+                        <option value="1">SI</option>
+                        <option value="0">NO</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="simpleinput">Resiodencia (Espacio)</label>
                       <select name="" id="simpleinput" class="form-control">
                         <option value="null">Selecciona propiedad</option>
                         {{!-- Aqui va codigo para listar espacios --}}
                       </select>
                     </div>
 
+                    <div class="form-group mb-3">
+                      <label>Fecha inicio</label>
+                      <input type="date" id="fecha_inicio" class="form-control" onchange="">
+                      <div id="FB_fecha_inicio"></div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label>Fecha fin</label>
+                      <input type="date" id="fecha_fin" class="form-control" onchange="">
+                      <div id="FB_fecha_fin"></div>
+                    </div>
 
                     <div class="form-group mb-3">
                       <label>Estado</label>
@@ -218,6 +253,7 @@
                         <option value="INACTIVO">INACTIVO</option>
                       </select>
                     </div>
+
                   </div>
                   <div class="card-body">
                     <button id="boton_crear" type="button" class="btn mb-2 btn-outline-primary btn-block"><span

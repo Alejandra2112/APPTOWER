@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="favicon.ico">
-  <title>Propietarios</title>
+  <title>Visitantes</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="css/simplebar.css">
   <!-- Fonts CSS -->
@@ -131,7 +131,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link pl-3" href="propietarios"><span class="ml-1 item-text">G. visitantes</span></a>
+                <a class="nav-link pl-3" href="visitantes"><span class="ml-1 item-text">G. visitantes</span></a>
               </li>
             </ul>
           </li>
@@ -144,10 +144,10 @@
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-11">
-            <h2 class="page-title">Crear propietarios</h2>
+            <h2 class="page-title">Crear visitantes</h2>
             <div class="card shadow mb-4">
               {{!-- <div class="card-header">
-                <strong class="card-title">Registrar un nuevo propietario</strong>
+                <strong class="card-title">Registrar un nuevo visitante</strong>
               </div> --}}
               <div class="card-body">
                 <div class="row">
@@ -167,55 +167,49 @@
                     </div>
 
                     <div class="form-group mb-3">
-                      <label for="example-password">Nombre propietario</label>
+                      <label for="example-password">Nombre visitante</label>
                       <input type="text" id="nombre" class="form-control" onchange="ER_validacion_nombre()" required>
                       <div id="FB_nombre"></div>
                     </div>
                     <div class="form-group mb-3">
-                      <label for="example-password">Apellido propietario</label>
+                      <label for="example-password">Apellido visitante</label>
                       <input type="text" id="apellido" class="form-control" onchange="ER_validacion_apellido()"
                         required>
                       <div id="FB_apellido"></div>
                     </div>
+
+
+
+                  </div> <!-- /.col -->
+                  <div class='col-md-6'>
                     <div class="form-group mb-3">
                       <label for="example-password">Edad</label>
                       <input type="number" id="edad" class="form-control" onchange="ER_validacion_edad()" required>
                       <div id="FB_edad"></div>
                     </div>
-
-
-                  </div> <!-- /.col -->
-
-
-                  <div class="col-md-6">
                     <div class="form-group mb-3">
-                      <label>Correo</label>
-                      <input type="email" id="correo" class="form-control" onchange="ER_validacion_correo()" required>
-                      <div id="FB_correo"></div>
-                    </div>
-                    <div class="form-group mb-3">
-                      <label>Telefono</label>
-                      <input type="text" id="telefono" class="form-control" onchange="ER_validacion_telefono()">
-                      <div id="FB_telefono"></div>
-                    </div>
-
-
-
-
-                    <div class="form-group mb-3">
-                      <label for="simpleinput">Propiedad</label>
+                      <label for="simpleinput">Genero</label>
                       <select name="" id="simpleinput" class="form-control">
-                        <option value="null">Selecciona propiedad</option>
+                        <option value="M">MASCULINO</option>
+                        <option value="F">FEMENINO</option>
+                        {{!-- Aqui va codigo para listar espacios --}}
+                      </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="simpleinput">Anfitrion</label>
+                      <select name="" id="simpleinput" class="form-control">
+                        <option value="null">SELECCIONE ANFITRIO</option>
                         {{!-- Aqui va codigo para listar espacios --}}
                       </select>
                     </div>
 
 
                     <div class="form-group mb-3">
-                      <label>Estado</label>
+                      <label>PERMISO</label>
                       <select name="" id="simpleinput" class="form-control">
-                        <option value="ACTIVO">ACTIVO</option>
-                        <option value="INACTIVO">INACTIVO</option>
+                        <option value="PERMITIDO">PERMITIDO</option>
+                        <option value="NO PERMITIDO">NO PERMITIDO</option>
                       </select>
                     </div>
                   </div>
