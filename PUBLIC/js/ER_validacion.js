@@ -182,6 +182,116 @@ function ER_validacion_telefono() {
 
 }
 
+function ER_fecha_inicio() {
+     
+    const fecha_inicio = document.querySelector('#fecha_inicio');
+    const fecha_fin = document.querySelector('#fecha_fin');
+
+    const FB_fecha_inicio = document.querySelector('#FB_fecha_inicio');
+
+
+    const fecha_actual = new Date()
+
+    try {
+
+        if (new Date(fecha_inicio.value) < fecha_actual) {
+
+            throw `La fecha inicio ${fecha_inicio.value} no es valida`;
+
+
+        }
+
+        if (new Date(fecha_fin.value) < fecha_actual) {
+
+            throw `La fecha salida ${fecha_fin.value} no es valida`;
+
+        }
+
+        else if (new Date(fecha_inicio.value) > new Date(fecha_fin.value)) {
+
+            throw 'La fecha de salida debe ser antes que la fecha de ingreso'
+
+        }
+
+        else if (isNaN(new Date(fecha_inicio.value))) {
+
+            throw 'Debes seleccionar la fecha de inicio'
+        }
+
+        else {
+
+            // console.log('Continua viendo precios de vuelos');
+            fecha_inicio.style.borderColor = 'green';
+            FB_fecha_inicio.innerHTML = '';
+            // fecha_fin.style.borderColor = 'green';
+
+        }
+    } catch (error) {
+
+        FB_fecha_inicio.innerHTML = error;
+        FB_fecha_inicio.style.color = 'red';
+        fecha_inicio.style.borderColor = 'red';
+        // fecha_fin.style.borderColor = 'red';
+
+
+    }
+}
+
+function ER_fecha_fin() {
+     
+    const fecha_inicio = document.querySelector('#fecha_inicio');
+    const fecha_fin = document.querySelector('#fecha_fin');
+
+    const FB_fecha_fin = document.querySelector('#FB_fecha_fin');
+
+
+    const fecha_actual = new Date()
+
+    try {
+
+        if (new Date(fecha_inicio.value) < fecha_actual) {
+
+            throw `La fecha inicio ${fecha_inicio.value} no es valida`;
+
+
+        }
+
+        if (new Date(fecha_fin.value) < fecha_actual) {
+
+            throw `La fecha salida ${fecha_fin.value} no es valida`;
+
+        }
+
+        else if (new Date(fecha_inicio.value) > new Date(fecha_fin.value)) {
+
+            throw 'La fecha de salida debe ser antes que la fecha de ingreso'
+
+        }
+
+        
+
+        else {
+
+            // console.log('Continua viendo precios de vuelos');
+            // fecha_inicio.style.borderColor = 'green';
+            FB_fecha_fin.innerHTML = '';
+            fecha_fin.style.borderColor = 'green';
+
+        }
+    } catch (error) {
+
+        // FB_fecha_inicio.innerHTML = error;
+        // FB_fecha_inicio.style.color = 'red';
+        // fecha_inicio.style.borderColor = 'red';
+        FB_fecha_fin.innerHTML = error;
+        FB_fecha_fin.style.color = 'red';
+        fecha_fin.style.borderColor = 'red';
+        
+
+
+    }
+}
+
 const boton_crear = document.querySelector('#boton_crear').addEventListener('click', (e)=> {
 
     e.preventDefault();
@@ -193,6 +303,9 @@ const boton_crear = document.querySelector('#boton_crear').addEventListener('cli
     ER_validacion_correo();
     ER_validacion_telefono();
 
+
+    ER_fecha_inicio()
+    ER_fecha_fin()
 
 })
 

@@ -4,11 +4,11 @@ const path = require('path');
 
 const app = express()
 
-const puerto = 8081
+const puerto = 8082
 app.use(express.static('PUBLIC'))   
 
 app.set('views', path.join(__dirname+'/PUBLIC/VISTAS'))//direccion de las vistas
-app.set('view engine', 'hbs')//Motor de plantillas
+app.set('view engine', 'hbs')//Motor de p<lantillas
 
 hbs.registerPartials(__dirname+ '/PUBLIC/PARTIALS');    
 
@@ -48,7 +48,12 @@ app.get('/espacios', (req, res) => {
 })
 
 app.get('/visitas', (req, res) => {
-    res.render('visitas')
+    res.render('visitas', {
+
+        title: 'Visitas 👨‍👦',
+        registro: 'visitas'
+
+    })
 })
 
 
@@ -56,5 +61,5 @@ app.listen(puerto, () => {
     console.log(`Escuchando por el puerto ${puerto}`)
 })
 
-console.log("hola soy aleja");
+console.log("Jose sacaCaquita");
 
