@@ -1,6 +1,6 @@
 const express = require('express')//Importa el modulo para crear aplicaciones web
 const app = express() // Se crea una instancia de express
-const port = 8087 //Puerto
+const puerto = 8087 //Puerto
 const path = require('path') //Importa el mudulo path que permite trabajar con rutas y directorios
 const hbs = require('hbs')//Motor de plantillas
 
