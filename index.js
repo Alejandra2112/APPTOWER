@@ -1,25 +1,24 @@
-const express = require('express');
-const hbs = require('hbs');
-const path = require('path');
+const express = require('express')//Importa el modulo para crear aplicaciones web
+const app = express() // Se crea una instancia de express
+const port = 8087 //Puerto
+const path = require('path') //Importa el mudulo path que permite trabajar con rutas y directorios
+const hbs = require('hbs')//Motor de plantillas
 
-const app = express()
+app.use( express.static('public'))//Se usa para que cualquier archivo estatico este disponible
 
-const puerto = 8081
-app.use(express.static('PUBLIC'))   
+// Establece si las vistas existen 
+app.set('views', path.join(__dirname+ '/public/views' ))
+// Establece que se utilizaran archivos hbs para las vistas
+app.set('view engine', 'hbs')
 
-app.set('views', path.join(__dirname+'/PUBLIC/VISTAS'))//direccion de las vistas
-app.set('view engine', 'hbs')//Motor de plantillas
+hbs.registerPartials(__dirname + '/public/partials')
 
-hbs.registerPartials(__dirname+ '/PUBLIC/PARTIALS');    
-
-
-
-app.get('/', (req, res) => {
-    res.render('dashboard')
-    
+//Esta es la respuesta que se le muestra al cliente
+app.get('/', (req, res)=>{
+    res.render ('login')//render muestra un formato legible al cliente
 })
 app.get('/usuarios', (req, res)=>{
-    res.render ('usuarios')//render muestra un formato legible al cliente
+    res.render('usuarios')
 })
 app.get('/roles', (req, res)=>{
     res.render('roles')
@@ -28,17 +27,5 @@ app.get('/roles', (req, res)=>{
 app.get('/vigilantes', (req, res)=>{
     res.render('vigilantes')
 })
-app.get('/cuenta', (req, res) => {
-    res.render('cuenta_cobro')
-})
-app.get('/propietarios', (req, res) => {
-    res.render('propietarios')
-})
 
-
-app.listen(puerto, () => {
-    console.log(`Escuchando por el puerto ${puerto}`)
-})
-
-console.log("hola soy aleja");
-
+app.listen(port, console.log(`Escuchando por el puerto ${port}`))
