@@ -25,7 +25,7 @@ app.get('/vigilantes', (req, res)=>{
     res.render('vigilantes')
 })
 app.get('/cuenta', (req, res) => {
-    res.render('cuenta_cobro')
+    res.render('cuentascobros')
 })
 app.get('/propietarios', (req, res) => {
     res.render('propietarios')
@@ -51,6 +51,7 @@ app.get('/visitas', (req, res) => {
 
     })
 })
+
 
 
 app.listen(puerto, () => {
