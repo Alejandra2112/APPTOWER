@@ -4,14 +4,11 @@ const port = 8087 //Puerto
 const path = require('path') //Importa el mudulo path que permite trabajar con rutas y directorios
 const hbs = require('hbs')//Motor de plantillas
 
-app.use( express.static('public'))//Se usa para que cualquier archivo estatico este disponible
+app.use(express.static('PUBLIC'))   
 
-// Establece si las vistas existen 
-app.set('views', path.join(__dirname+ '/public/views' ))
-// Establece que se utilizaran archivos hbs para las vistas
-app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname+'/PUBLIC/VISTAS'))//direccion de las vistas
+app.set('view engine', 'hbs')//Motor de p<lantillas
 
-hbs.registerPartials(__dirname + '/public/partials')
 
 //Esta es la respuesta que se le muestra al cliente
 app.get('/', (req, res)=>{
@@ -27,5 +24,38 @@ app.get('/roles', (req, res)=>{
 app.get('/vigilantes', (req, res)=>{
     res.render('vigilantes')
 })
+app.get('/cuenta', (req, res) => {
+    res.render('cuenta_cobro')
+})
+app.get('/propietarios', (req, res) => {
+    res.render('propietarios')
+})
 
-app.listen(port, console.log(`Escuchando por el puerto ${port}`))
+app.get('/residentes', (req, res) => {
+    res.render('residentes')
+})
+
+app.get('/visitantes', (req, res) => {
+    res.render('visitantes')
+})
+
+app.get('/espacios', (req, res) => {
+    res.render('espacios')
+})
+
+app.get('/visitas', (req, res) => {
+    res.render('visitas', {
+
+        title: 'Visitas 👨‍👦',
+        registro: 'visitas'
+
+    })
+})
+
+
+app.listen(puerto, () => {
+    console.log(`Escuchando por el puerto ${puerto}`)
+})
+
+console.log("Jose sacaCaquita");
+
