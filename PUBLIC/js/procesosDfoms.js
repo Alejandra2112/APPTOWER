@@ -19,18 +19,18 @@ boton.addEventListener("click", function(e){
 }
 })
  
-const botonC = document.getElementById("botonC");
-botonC.addEventListener("Click", function(e){
-e.preventDefault();
-    try{
-        if (document.getElementById("tipoC").value == "" || document.getElementById("motivo").value == "" || document.getElementById("descripcion").value == "" || document.getElement("valor").value == "" || document.getElementById("cuota").value==""){
-            throw new Error("Ninguno de los campos puede ir vacio");
-        }else if(document.getElementById("descripcion").value){
+// const botonC = document.getElementById("botonC");
+// botonC.addEventListener("Click", function(e){
+// e.preventDefault();
+//     try{
+//         if (document.getElementById("tipoC").value == "" || document.getElementById("motivo").value == "" || document.getElementById("descripcion").value == "" || document.getElement("valor").value == "" || document.getElementById("cuota").value==""){
+//             throw new Error("Ninguno de los campos puede ir vacio");
+//         }else if(document.getElementById("descripcion").value){
 
-        }
+//         }
 
-    }catch(error){
+//     }catch(error){
 
-    }
+//     }
 
-})
+// })
