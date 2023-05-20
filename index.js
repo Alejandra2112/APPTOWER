@@ -5,6 +5,7 @@ const path = require('path');
 const app = express()
 
 const puerto = 8081
+
 app.use(express.static('PUBLIC'))   
 
 app.set('views', path.join(__dirname+'/PUBLIC/VISTAS'))//direccion de las vistas
@@ -34,7 +35,13 @@ app.get('/cuenta', (req, res) => {
 app.get('/propietarios', (req, res) => {
     res.render('propietarios')
 })
+app.get('/notificaciones', (req, res) => {
+    res.render('crear_notificaciones')
+})
 
+app.get('/vehiculos', (req, res) => {
+    res.render('crear_vehiculo')
+})
 
 app.listen(puerto, () => {
     console.log(`Escuchando por el puerto ${puerto}`)
