@@ -43,6 +43,8 @@ app.get('/espacios', (req, res) => {
     res.render('espacios')
 })
 
+
+
 app.get('/visitas', (req, res) => {
     res.render('visitas', {
 
