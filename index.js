@@ -27,6 +27,10 @@ app.get('/vigilantes', (req, res)=>{
 app.get('/cuentas', (req, res) => {
     res.render('cuentas_cobros')
 })
+
+app.get('/cobros', (req, res) => {
+    res.render('cobros')
+})
 app.get('/propietarios', (req, res) => {
     res.render('propietarios')
 })
