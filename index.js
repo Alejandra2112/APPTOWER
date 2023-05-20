@@ -24,8 +24,8 @@ app.get('/roles', (req, res)=>{
 app.get('/vigilantes', (req, res)=>{
     res.render('vigilantes')
 })
-app.get('/cuenta', (req, res) => {
-    res.render('cuentascobros')
+app.get('/cuentas', (req, res) => {
+    res.render('cuentas_cobros')
 })
 app.get('/propietarios', (req, res) => {
     res.render('propietarios')
@@ -58,5 +58,4 @@ app.listen(puerto, () => {
     console.log(`Escuchando por el puerto ${puerto}`)
 })
 
-console.log("Jose sacaCaquita");
 

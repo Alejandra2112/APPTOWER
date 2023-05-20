@@ -182,6 +182,99 @@ function ER_validacion_telefono() {
 
 }
 
+function ER_nombre_espacio () {
+
+    try {
+
+        const ER_nombre_espacio = /^[A-Z0-9]{3,4}$/
+
+        const nombre_espacio = document.querySelector('#nombre_espacio');
+        const FB_nombre_espacio = document.querySelector('#FB_nombre_espacio');
+
+        nombre_espacio.value = nombre_espacio.value.toUpperCase()
+
+        if (ER_nombre_espacio.test(nombre_espacio.value)) {
+
+            nombre_espacio.style.borderColor = 'green'
+
+            FB_nombre_espacio.innerHTML = '';
+            FB_nombre_espacio.style.color = 'green'
+        }
+
+        else throw 'Lo siento, no es valido ' + nombre_espacio.value;;
+
+    } catch (error) {
+
+        FB_nombre_espacio.innerHTML = error;
+        nombre_espacio.style.borderColor = 'red'
+        FB_nombre_espacio.style.color = 'red'
+
+    }
+
+}
+
+function ER_area() {
+
+    try {
+
+        const ER_area = /^[0-9]+$/
+
+        const area = document.querySelector('#area');
+        const FB_area = document.querySelector('#FB_area');
+
+        area.value = area.value.toUpperCase()
+
+        if (ER_area.test(area.value)) {
+
+            area.style.borderColor = 'green'
+
+            FB_area.innerHTML = '';
+            FB_area.style.color = 'green'
+        }
+
+        else throw 'Lo siento, no es valido ' + area.value;;
+
+    } catch (error) {
+
+        FB_area.innerHTML = error;
+        area.style.borderColor = 'red'
+        FB_area.style.color = 'red'
+
+    }
+
+}
+
+function ER_capacidad() {
+
+    try {
+
+        const ER_capacidad = /^[0-9]+$/
+
+        const capacidad = document.querySelector('#capacidad');
+        const FB_capacidad = document.querySelector('#FB_capacidad');
+
+        capacidad.value = capacidad.value.toUpperCase()
+
+        if (ER_capacidad.test(capacidad.value)) {
+
+            capacidad.style.borderColor = 'green'
+
+            FB_capacidad.innerHTML = '';
+            FB_capacidad.style.color = 'green'
+        }
+
+        else throw 'Lo siento, no es valido ' + capacidad.value;;
+
+    } catch (error) {
+
+        FB_capacidad.innerHTML = error;
+        capacidad.style.borderColor = 'red'
+        FB_capacidad.style.color = 'red'
+
+    }
+
+}
+
 function ER_fecha_inicio() {
      
     const fecha_inicio = document.querySelector('#fecha_inicio');
@@ -308,6 +401,16 @@ const boton_crear = document.querySelector('#boton_crear').addEventListener('cli
     ER_fecha_fin()
 
 })
+
+const regresar = document.querySelector('#regresar').addEventListener('click', (e)=> {
+
+    e.preventDefault();
+
+    window.location.href = "/"
+
+})
+
+
 
 
 // module.exports = ER_validacion;
