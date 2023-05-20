@@ -57,11 +57,16 @@ app.get('/visitas', (req, res) => {
 
     })
 })
+app.get('/notificaciones', (req, res) => {
+    res.render('crear_notificaciones')
+})
 
+app.get('/vehiculos', (req, res) => {
+    res.render('crear_vehiculo')
+ })
 
 
 app.listen(puerto, () => {
-    console.log(`Escuchando por el puerto ${puerto}`)
+    console.log(`Escuchando por el puerto ${puerto}`)
 })
-
 
