@@ -67,6 +67,6 @@ formVigilante .addEventListener('submit', (e) => {
     }
     messagee.innerHTML = 'Vigilante Registrado'
   } catch (e) {
-    messagee.innerHTML = e
+    messagee.innerHTML = '<span style="color: red;">' + e + '</span>';
   }
 })
