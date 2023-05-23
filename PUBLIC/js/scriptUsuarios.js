@@ -1,3 +1,7 @@
+function mostrarAlerta() {
+    alert("Por favor, escribe 8 letras y un número en la contraseña.")
+  }
+
 const formulario = document.querySelector('#formulariousuario')
 const messag = document.getElementById('registrousuario')
 
@@ -41,16 +45,13 @@ formulario.addEventListener('submit', (e) => {
                 throw 'La contraseña no cumple con la condición'
             }
         } else {
-            throw 'Las contraseñas tienen que ser iguales'
+            throw 'Las contraseñas deben que ser iguales'
         }
 
         messag.innerHTML = 'Usuario Registrado'
     } catch (e) {
-        messag.innerHTML = e
+
+        messag.innerHTML = '<span style="color: red;">' + e + '</span>';
     }
 
-
-
-
 })
-
