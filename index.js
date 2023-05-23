@@ -38,7 +38,9 @@ app.get('/residentes', (req, res) => {
 app.get('/visitantes', (req, res) => {
     res.render('visitantes')
 })
-
+app.get('/cobros', (req, res) => {
+    res.render('cobros')
+})
 app.get('/espacios', (req, res) => {
     res.render('espacios')
 })
