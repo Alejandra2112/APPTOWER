@@ -24,8 +24,12 @@ app.get('/roles', (req, res)=>{
 app.get('/vigilantes', (req, res)=>{
     res.render('vigilantes')
 })
-app.get('/cuenta', (req, res) => {
-    res.render('cuentascobros')
+app.get('/cuentas', (req, res) => {
+    res.render('cuentas_cobros')
+})
+
+app.get('/cobros', (req, res) => {
+    res.render('cobros')
 })
 app.get('/propietarios', (req, res) => {
     res.render('propietarios')
@@ -43,6 +47,8 @@ app.get('/espacios', (req, res) => {
     res.render('espacios')
 })
 
+
+
 app.get('/visitas', (req, res) => {
     res.render('visitas', {
 
@@ -51,12 +57,16 @@ app.get('/visitas', (req, res) => {
 
     })
 })
+app.get('/notificaciones', (req, res) => {
+    res.render('crear_notificaciones')
+})
 
+app.get('/vehiculos', (req, res) => {
+    res.render('crear_vehiculo')
+ })
 
 
 app.listen(puerto, () => {
-    console.log(`Escuchando por el puerto ${puerto}`)
+    console.log(`Escuchando por el puerto ${puerto}`)
 })
-
-console.log("Jose sacaCaquita");
 
