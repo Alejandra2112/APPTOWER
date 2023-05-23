@@ -30,6 +30,6 @@ formul.addEventListener('submit', (e) => {
 
     message.innerHTML = 'Rol Registrado';
   } catch (e) {
-    message.innerHTML = e;
+    message.innerHTML = '<span style="color: red;">' + e + '</span>';
   }
 });

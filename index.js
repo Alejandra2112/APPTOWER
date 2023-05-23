@@ -1,17 +1,14 @@
 const express = require('express')//Importa el modulo para crear aplicaciones web
 const app = express() // Se crea una instancia de express
-const port = 8087 //Puerto
+const puerto = 8087 //Puerto
 const path = require('path') //Importa el mudulo path que permite trabajar con rutas y directorios
 const hbs = require('hbs')//Motor de plantillas
 
-app.use( express.static('public'))//Se usa para que cualquier archivo estatico este disponible
+app.use(express.static('PUBLIC'))   
 
-// Establece si las vistas existen 
-app.set('views', path.join(__dirname+ '/public/views' ))
-// Establece que se utilizaran archivos hbs para las vistas
-app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname+'/PUBLIC/VISTAS'))//direccion de las vistas
+app.set('view engine', 'hbs')//Motor de p<lantillas
 
-hbs.registerPartials(__dirname + '/public/partials')
 
 //Esta es la respuesta que se le muestra al cliente
 app.get('/', (req, res)=>{
