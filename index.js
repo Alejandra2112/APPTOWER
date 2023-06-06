@@ -35,8 +35,16 @@ app.get('/propietarios', (req, res) => {
     res.render('propietarios')
 })
 
+app.get('/residentes_crear', (req, res) => {
+    res.render('residentes_crear')
+})
+
 app.get('/residentes', (req, res) => {
-    res.render('residentes')
+    res.render('residentes', {
+
+        title: 'Residentes 👨‍👨‍👧‍👧',
+        modulo: 'Residentes'
+    })
 })
 
 app.get('/visitantes', (req, res) => {
