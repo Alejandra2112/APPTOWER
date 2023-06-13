@@ -10,8 +10,10 @@ class Server {
 
         this.port = process.env.port
 
-        //this.moduloPath = '/api/usuario' //Ruta pública de la API
-
+        this.usuarioPath = '/api/usuario' 
+        this.rolesPath = '/api/roles'
+        this.vigilantesPath = '/api/vigilantes'
+        
         this.middlewares()//Seguridad
 
         this.routes()
@@ -30,7 +32,39 @@ class Server {
 
     routes()
     {
-        //this.app.use(this.usuarioPath, require('../routes/usuarios'))
+
+        this.app.use(this.usuarioPath, require('../ROUTES/usuarios'))
+        this.app.use(this.vigilantesPath, require('../ROUTES/vigilantes'))
+        this.app.use(this.rolesPath, require ('../ROUTES/roles'))
+
+        // this.app.get('/usuarios', async (req, res) => {
+        //     const url = 'http://localhost:8094/api/usuario';
+        
+        //     try {
+        //       const response = await fetch(url);
+        //       const data = await response.json();
+        //       const usuarios = data.usuarios;
+        
+        //       let mensaje = '';
+        //       usuarios.forEach(usuario => {
+        //         mensaje += `<tr><td>${usuario.tipoDoc}</td>` +
+        //                    `<td>${usuario.documento}</td>` +
+        //                    `<td>${usuario.nombre}</td>` +
+        //                    `<td>${usuario.apellido}</td>` +
+        //                    `<td>${usuario.correo}</td>` +
+        //                    `<td>${usuario.telefono}</td>` +
+        //                    `<td>${usuario.rol}</td>` +
+        //                    `<td><a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick='editar(${JSON.stringify(usuario)})'>Editar</a>
+        //                     <a class="waves-effect waves-light btn modal-trigger red" href="#" onclick='eliminar("${usuario._id}")'>Eliminar</a>
+        //                    </td></tr>`;
+        //       });
+        
+        //       res.send(`<table>${mensaje}</table>`);
+        //     } catch (error) {
+        //       res.status(500).send('Error en la solicitud');
+        //     }
+        //   });
+          
     }
 
     async db_connect(){
