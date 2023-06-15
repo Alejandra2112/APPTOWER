@@ -13,8 +13,12 @@ class Server {
         this.usuarioPath = '/api/usuario' 
         this.rolesPath = '/api/roles'
         this.vigilantesPath = '/api/vigilantes'
+
+        this.residentesPath = '/api/residentes'
+        // this.propietariosPath = '/api/propietarios'
+        // this.espaciosPath = '/api/espacios'
         
-        this.middlewares()//Seguridad
+        this.middlewares()
 
         this.routes()
 
@@ -25,8 +29,8 @@ class Server {
     middlewares() //Directorio Publico
     {
         this.app.use(express.static(__dirname + "/PUBLIC"));
-        //this.app.use( cors() );
-        //this.app.use(bodyParser.json()) // for parsing application/json
+        // this.app.use( cors() );
+        // this.app.use(bodyParser.json()) // for parsing application/json
 
     }
 
@@ -37,43 +41,23 @@ class Server {
         this.app.use(this.vigilantesPath, require('../ROUTES/vigilantes'))
         this.app.use(this.rolesPath, require ('../ROUTES/roles'))
 
-        // this.app.get('/usuarios', async (req, res) => {
-        //     const url = 'http://localhost:8094/api/usuario';
-        
-        //     try {
-        //       const response = await fetch(url);
-        //       const data = await response.json();
-        //       const usuarios = data.usuarios;
-        
-        //       let mensaje = '';
-        //       usuarios.forEach(usuario => {
-        //         mensaje += `<tr><td>${usuario.tipoDoc}</td>` +
-        //                    `<td>${usuario.documento}</td>` +
-        //                    `<td>${usuario.nombre}</td>` +
-        //                    `<td>${usuario.apellido}</td>` +
-        //                    `<td>${usuario.correo}</td>` +
-        //                    `<td>${usuario.telefono}</td>` +
-        //                    `<td>${usuario.rol}</td>` +
-        //                    `<td><a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick='editar(${JSON.stringify(usuario)})'>Editar</a>
-        //                     <a class="waves-effect waves-light btn modal-trigger red" href="#" onclick='eliminar("${usuario._id}")'>Eliminar</a>
-        //                    </td></tr>`;
-        //       });
-        
-        //       res.send(`<table>${mensaje}</table>`);
-        //     } catch (error) {
-        //       res.status(500).send('Error en la solicitud');
-        //     }
-        //   });
+        this.app.use(this.residentesPath, require ('../ROUTES/residentes'))
+        // this.app.use(this.propietariosPath, require ('../ROUTES/propietarios'))
+        // this.app.use(this.this.app.use(this.rolesPath, require ('../ROUTES/roles')))
           
     }
 
-    async db_connect(){
+    async db_connect() {
+
         await db_connection()
+
     }
 
     listen() {
         this.app.listen(this.port, () => {
+
             console.log(`Escuchando el puerto ${this.port}`)
+
         })
     }
 }

@@ -1,4 +1,4 @@
-const {Scheme, model} = require('mongoose')
+const {Schema, model} = require('mongoose')
 
 const schema_residente = Schema ({
 
@@ -6,43 +6,43 @@ const schema_residente = Schema ({
 
         type: String,
         enum: ['CC', 'CE'],
-        required: [true, 'El tipo de documento del residente es obligatorio']
+        // required: [true, 'El tipo de documento del residente es obligatorio']
 
     },
 
     numero_documento_residente: {
 
         type: String,
-        required: [true, 'El numero de documento del residente es obligatorio']
+        // required: [true, 'El numero de documento del residente es obligatorio']
 
     },
 
     nombre_residente: {
 
         type: String,
-        required: [true, 'El nombre del residente es obligatorio']
+        // required: [true, 'El nombre del residente es obligatorio']
 
     },
 
     apellido_residente: {
 
         type: String,
-        required: [true, 'El apellido del residente es obligatorio']
+        // required: [true, 'El apellido del residente es obligatorio']
         
     },
 
     telefono_residente: {
 
         type: String,
-        required: [true, 'El numemero de telefono del residente es obligatorio']
+        // required: [true, 'El numemero de telefono del residente es obligatorio']
         
     },
 
     edad_residente: {
 
         type: Number,
-        required: [true, 'La edad del residente es obligatorio'],
-        min: [0, 'No hay edades menores a cero (0)']
+        // required: [true, 'La edad del residente es obligatorio'],
+        min: [0, 'No hay edades menores a cero']
         
     },
 
@@ -50,28 +50,28 @@ const schema_residente = Schema ({
 
         type: String,
         enum: ['M', 'F', 'OTRO'],
-        required: [true, 'El genero residente es obligatorio']
+        // required: [true, 'El genero residente es obligatorio']
         
     },
 
     habita: {
 
         type: Boolean,
-        required: [true, 'El estado de habita es obligatorio']
+        // required: [true, 'El estado de habita es obligatorio']
         
     },
 
     residencia: {
 
         type: String,
-        required: [true, 'La residencia es obligatorio']
+        // required: [true, 'La residencia es obligatorio']
         
     },
 
     fecha_inicio: {
 
         type: Date,
-        required: [true, 'La fecha de inicio es obligatorio']
+        // required: [true, 'La fecha de inicio es obligatorio']
         
     },
 
@@ -85,7 +85,7 @@ const schema_residente = Schema ({
 
         type: String,
         enum: ['ACTIVO', 'INACTIVO'],
-        required: [true, 'El estado del residente es obligatorio']
+        // required: [true, 'El estado del residente es obligatorio']
         
     }
 })
