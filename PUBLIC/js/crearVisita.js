@@ -18,6 +18,6 @@ const espacios = [
   ];
   
 
-  $('#visitantes').select2({
-    data: espacios
+  $('#visitante').select2({
+    data: visitantes
   });
