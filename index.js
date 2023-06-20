@@ -46,12 +46,7 @@ app.get('/espacios', (req, res) => {
 })
 
 app.get('/visitas', (req, res) => {
-    res.render('visitas', {
-
-        title: 'Visitas 👨‍👦',
-        registro: 'visitas'
-
-    })
+    res.render('visitas')
 })
 
 
